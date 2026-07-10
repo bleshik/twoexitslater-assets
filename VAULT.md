@@ -26,14 +26,9 @@ Two files per issue: **public teaser** (growth) and **full report** (subscribers
    ./scripts/publish-teaser.sh july-2026
    ./scripts/publish-vault.sh july-2026
    ```
-3. Copy teaser to personal site:
-   ```bash
-   cp ~/Desktop/Workspace/business-models/reports/W202628_analysis_report_teaser.html \
-      ~/K/alekseibalchunas/reports/funding-map-july-2026-teaser.html
-   ```
-4. Commit and push both repos.
-5. **Teaser URL** → posts, LinkedIn, site.
-6. **Vault URL** → welcome email and newsletter footer only.
+3. Commit and push `twoexitslater` repo.
+4. **Teaser URL** → posts, LinkedIn, sharing.
+5. **Vault URL** → welcome email and newsletter footer only.
 
 ## Naming
 
