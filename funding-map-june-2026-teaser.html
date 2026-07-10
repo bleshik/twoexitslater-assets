@@ -678,7 +678,7 @@ body.teaser-gated .filters-panel {
       <div class="kicker">
         <span><b>211</b> companies</span>
         <span>2026</span>
-        <span>10 Jul 2026, 16:41 UTC+7</span>
+        <span>10 Jul 2026, 16:52 UTC+7</span>
       </div>
       <h1>Startup funding <span class="hl">2026</span></h1>
       <p class="lede">Who raised money in 2026, how they make money, and what it takes to build their business — 211 companies.</p>
@@ -867,13 +867,7 @@ body.teaser-gated .filters-panel {
   }
 
   function fmtM(v) {
-    if (v == null || isNaN(v)) return '—';
-    return v >= 1000 ? '$' + (v / 1000).toFixed(2) + 'B' : '$' + v.toFixed(1) + 'M';
-  }
-
-  function fmtB(v) {
-    if (v == null || isNaN(v) || v <= 0) return '—';
-    return '$' + v.toFixed(2) + 'B';
+    return fmtMoneyCell(v);
   }
 
   function fmtMoneyCell(vMillions) {
@@ -881,7 +875,14 @@ body.teaser-gated .filters-panel {
     if (vMillions >= 1000) return '$' + (vMillions / 1000).toFixed(2) + 'B';
     if (vMillions >= 100) return '$' + Math.round(vMillions) + 'M';
     if (vMillions >= 10) return '$' + vMillions.toFixed(1) + 'M';
-    return '$' + vMillions.toFixed(2) + 'M';
+    if (vMillions >= 1) return '$' + vMillions.toFixed(2) + 'M';
+    var k = Math.round(vMillions * 1000);
+    return k > 0 ? '$' + k + 'K' : '—';
+  }
+
+  function fmtB(v) {
+    if (v == null || isNaN(v) || v <= 0) return '—';
+    return '$' + v.toFixed(2) + 'B';
   }
 
   function fmtValCell(valuationB) {
