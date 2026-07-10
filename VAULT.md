@@ -1,38 +1,41 @@
-# Vault (paid newsletter links)
+# Funding map — publish guide
 
-Unlisted HTML reports. No links from the public site — share URL only in the paid email section.
+Two files per issue: **public teaser** (growth) and **full report** (subscribers).
 
-## Current issue
+## Current issue (June 2026)
 
-| Period | File | URL |
+| Audience | File | URL |
 |---|---|---|
-| June 2026 | `funding-map-june-2026-x7k2.html` | https://assets.twoexitslater.com/vault/funding-map-june-2026-x7k2.html |
+| Public (posts, sharing) | `funding-map-june-2026-teaser.html` | https://assets.twoexitslater.com/funding-map-june-2026-teaser.html |
+| Subscribers (welcome + footer) | `vault/funding-map-june-2026-x7k2.html` | https://assets.twoexitslater.com/vault/funding-map-june-2026-x7k2.html |
+
+**Teaser:** Full 2026 default works; one filter change works; second change → subscribe overlay + blur.
+
+**Full:** all filters open, unlisted in `vault/` (`robots.txt` blocks `/vault/`).
 
 ## Monthly workflow
 
-1. Regenerate the report in `business-models`:
+1. Regenerate reports:
    ```bash
    cd ~/Desktop/Workspace/business-models
    ruby kb/scripts/generate_w202628_report.rb
    ```
-2. Publish with a **new** random suffix (never reuse old URLs):
+2. Publish both files:
    ```bash
    cd ~/K/twoexitslater
+   ./scripts/publish-teaser.sh july-2026
    ./scripts/publish-vault.sh july-2026
    ```
-3. Commit and push:
+3. Copy teaser to personal site:
    ```bash
-   git add vault/ robots.txt
-   git commit -m "chore(vault): add funding map for july-2026"
-   git push
+   cp ~/Desktop/Workspace/business-models/reports/W202628_analysis_report_teaser.html \
+      ~/K/alekseibalchunas/reports/funding-map-july-2026-teaser.html
    ```
-4. Put only the printed URL in the paid section of the newsletter.
+4. Commit and push both repos.
+5. **Teaser URL** → posts, LinkedIn, site.
+6. **Vault URL** → welcome email and newsletter footer only.
 
 ## Naming
 
-`funding-map-<period>-<suffix>.html`
-
-- `period` — slug like `june-2026`, `july-2026`
-- `suffix` — 4 random chars (`a-z0-9`); pass explicitly or let the script generate
-
-Old files stay online (forwarded links keep working) but subscribers only get the new URL each month.
+- Teaser: `funding-map-<period>-teaser.html` (public, root)
+- Full: `funding-map-<period>-<suffix>.html` (vault, random suffix each month)
