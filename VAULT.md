@@ -27,8 +27,11 @@ Two files per issue: **public teaser** (growth) and **full report** (subscribers
    ./scripts/publish-vault.sh july-2026
    ```
 3. Commit and push `twoexitslater` repo.
-4. **Teaser URL** → posts, LinkedIn, sharing.
-5. **Vault URL** → welcome email and newsletter footer only.
+4. **Teaser URL** → posts, LinkedIn, `alekseibalchunas.com` (#hunt section).
+5. **Vault URL** → Beehiiv only (not public):
+   - **Welcome email:** Settings → Emails → Welcome email — replace the full-report link.
+   - **Newsletter footer:** update the same vault link in the default footer template.
+6. Update `VAULT.md` “Current issue” table with the new period and vault URL.
 
 ## Naming
 

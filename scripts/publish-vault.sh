@@ -21,5 +21,9 @@ if ! grep -q 'noindex' "$OUT_PATH"; then
   <meta name="viewport"/' "$OUT_PATH"
 fi
 
+VAULT_URL="https://assets.twoexitslater.com/vault/$OUT_NAME"
+
 echo "Wrote vault/$OUT_NAME"
-echo "URL: https://assets.twoexitslater.com/vault/$OUT_NAME"
+echo "URL: $VAULT_URL"
+echo ""
+echo "Next: paste this URL into Beehiiv welcome email + newsletter footer"
