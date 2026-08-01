@@ -2,12 +2,12 @@
 
 Two files per issue: **public teaser** (growth) and **full report** (subscribers).
 
-## Current issue (June 2026)
+## Current issue (July 2026)
 
 | Audience | File | URL |
 |---|---|---|
-| Public (posts, sharing) | `funding-map-june-2026-teaser.html` | https://assets.twoexitslater.com/funding-map-june-2026-teaser.html |
-| Subscribers (welcome + footer) | `vault/funding-map-june-2026-x7k2.html` | https://assets.twoexitslater.com/vault/funding-map-june-2026-x7k2.html |
+| Public (posts, sharing) | `funding-map-july-2026-teaser.html` | https://assets.twoexitslater.com/funding-map-july-2026-teaser.html |
+| Subscribers (welcome + footer) | `vault/funding-map-july-2026-a8f3.html` | https://assets.twoexitslater.com/vault/funding-map-july-2026-a8f3.html |
 
 **Teaser:** Full 2026 default works; one filter change works; second change → subscribe overlay + blur.
 
@@ -18,7 +18,7 @@ Two files per issue: **public teaser** (growth) and **full report** (subscribers
 1. Regenerate reports:
    ```bash
    cd ~/Desktop/Workspace/business-models
-   ruby kb/scripts/generate_w202628_report.rb
+   REPORT_PERIOD=2026-07 ruby kb/scripts/generate_w202628_report.rb
    ```
 2. Publish both files:
    ```bash
