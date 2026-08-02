@@ -8,11 +8,12 @@ Two files per issue: **public teaser** (growth) and **full report** (subscribers
 |---|---|---|
 | Public (canonical, use everywhere) | `funding-map.html` | https://assets.twoexitslater.com/funding-map.html |
 | Public archive (July 2026) | `funding-map-july-2026-teaser.html` | https://assets.twoexitslater.com/funding-map-july-2026-teaser.html |
-| Subscribers (welcome + footer) | `vault/funding-map-july-2026-a8f3.html` | https://assets.twoexitslater.com/vault/funding-map-july-2026-a8f3.html |
+| Subscribers (canonical, welcome + footer) | `vault/funding-map.html` | https://assets.twoexitslater.com/vault/funding-map.html |
+| Subscriber archive (July 2026) | `vault/funding-map-july-2026-a8f3.html` | https://assets.twoexitslater.com/vault/funding-map-july-2026-a8f3.html |
 
 **Teaser:** Full 2026 default works; one filter change works; second change → subscribe overlay + blur.
 
-**Full:** all filters open, unlisted in `vault/` (`robots.txt` blocks `/vault/`).
+**Full:** all filters open, unlisted in `vault/` (`robots.txt` blocks `/vault/`). The stable `vault/funding-map.html` URL always contains the newest full report.
 
 ## Monthly workflow
 
@@ -32,13 +33,12 @@ Two files per issue: **public teaser** (growth) and **full report** (subscribers
 4. **Stable teaser URL** (`https://assets.twoexitslater.com/funding-map.html`) →
    posts, LinkedIn, `alekseibalchunas.com` (#hunt section). Keep dated teaser
    URLs as an archive; do not use them for new promotion.
-5. **Vault URL** → Beehiiv only (not public):
-   - **Welcome email:** Settings → Emails → Welcome email — replace the full-report link.
-   - **Newsletter footer:** update the same vault link in the default footer template.
-6. Update `VAULT.md` “Current issue” table with the new period and vault URL.
+5. **Stable vault URL** (`https://assets.twoexitslater.com/vault/funding-map.html`) → Beehiiv welcome email, newsletter footer, and all new subscriber placements. Set it once; do not replace it each month.
+6. Update `VAULT.md` “Current issue” table with the new dated archive URL.
 
 ## Naming
 
 - Teaser: `funding-map-<period>-teaser.html` (public, root)
 - Stable teaser: `funding-map.html` (public, root; overwritten with the newest issue)
 - Full: `funding-map-<period>-<suffix>.html` (vault, random suffix each month)
+- Stable full report: `vault/funding-map.html` (unlisted; overwritten with the newest issue)
