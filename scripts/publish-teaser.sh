@@ -6,6 +6,8 @@ REPORT_SRC="${REPORT_SRC:-$HOME/Desktop/Workspace/business-models/reports/W20262
 PERIOD="${1:?Usage: publish-teaser.sh <period>   e.g. june-2026}"
 OUT_NAME="funding-map-${PERIOD}-teaser.html"
 OUT_PATH="$ROOT/$OUT_NAME"
+LATEST_NAME="funding-map.html"
+LATEST_PATH="$ROOT/$LATEST_NAME"
 
 if [[ ! -f "$REPORT_SRC" ]]; then
   echo "Teaser report not found: $REPORT_SRC" >&2
@@ -13,6 +15,9 @@ if [[ ! -f "$REPORT_SRC" ]]; then
 fi
 
 cp "$REPORT_SRC" "$OUT_PATH"
+cp "$REPORT_SRC" "$LATEST_PATH"
 
 echo "Wrote $OUT_NAME"
 echo "URL: https://assets.twoexitslater.com/$OUT_NAME"
+echo "Updated $LATEST_NAME"
+echo "Stable URL: https://assets.twoexitslater.com/$LATEST_NAME"
