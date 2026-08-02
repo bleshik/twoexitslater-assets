@@ -2,8 +2,27 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-REPORT_SRC="${REPORT_SRC:-$HOME/Desktop/Workspace/business-models/reports/W202628_analysis_report_teaser.html}"
 PERIOD="${1:?Usage: publish-teaser.sh <period>   e.g. june-2026}"
+
+MONTH_NAME="${PERIOD%-*}"
+YEAR="${PERIOD##*-}"
+case "$MONTH_NAME" in
+  january) MONTH="01" ;;
+  february) MONTH="02" ;;
+  march) MONTH="03" ;;
+  april) MONTH="04" ;;
+  may) MONTH="05" ;;
+  june) MONTH="06" ;;
+  july) MONTH="07" ;;
+  august) MONTH="08" ;;
+  september) MONTH="09" ;;
+  october) MONTH="10" ;;
+  november) MONTH="11" ;;
+  december) MONTH="12" ;;
+  *) echo "Unsupported period: $PERIOD (expected e.g. july-2026)" >&2; exit 1 ;;
+esac
+
+REPORT_SRC="${REPORT_SRC:-$HOME/Desktop/Workspace/business-models/reports/funding_map_${YEAR}_${MONTH}_teaser.html}"
 OUT_NAME="funding-map-${PERIOD}-teaser.html"
 OUT_PATH="$ROOT/$OUT_NAME"
 LATEST_NAME="funding-map.html"
